@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<form action="{% url 'remove' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" >click to try with another photo</button>
+</form>
+</form>
+</form>
+.<br>
+.<br>
+.<br>
+{% for i in lst_image  %}
+<img src="../../../../share/{{i}}" ><br>
+...............<br>
+{% endfor %}
+</body>
+</html>

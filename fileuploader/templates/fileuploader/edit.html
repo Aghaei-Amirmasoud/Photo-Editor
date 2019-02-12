@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<img src="../../../media/{{image}}">
+<form action="{% url 'gray' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" >gray</button>
+</form>
+<form action="{% url 'crop' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+crop size<br>
+<input type='number' name='box1' id="c1">
+<input type='number' name='box2' id="c2">
+<input type='number' name='box3' id="c3">
+<input type='number' name='box4' id='c4'>
+<button type="submit" >crop</button>
+</form>
+<form action="{% url 'resize' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+resize<br>
+<input type='number' name='rebox1' id="re1">
+<input type='number' name='rebox2' id="re2">
+<button type="submit" >resize</button>
+</form>
+<form action="{% url 'rotate' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+rotate<br>
+<input type='numbert' name='rtbox1' id="rt1">
+<button type="submit" >rotate</button>
+</form>
+.<br>
+.<br>
+<form action="{% url 'share_2' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" >share</button>
+</form>
+.<br>
+.<br>
+
+<form action="{% url 'remove' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" >click to try with another photo</button>
+</form>
+
+
+
+</body>
+</html>
