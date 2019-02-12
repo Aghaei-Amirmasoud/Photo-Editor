@@ -74,9 +74,6 @@ def rotate(request):
         return HttpResponse('chek: 1-image was not uploaded  2-you entered string  3-you entered nothing')
 
 
-
-
-
 def remove(request):
     return redirect('/')
 
