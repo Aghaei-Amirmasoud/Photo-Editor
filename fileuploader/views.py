@@ -44,8 +44,11 @@ def crop(request):
         context = {'image' : request.session['Url']}
         return render(request, 'fileuploader/edit.html', context)
     except :
-        return HttpResponse('No photo uploaded')
-
+        return HttpResponse('chek: 1-image was not uploaded  2-you entered string  3-you entered nothing'
+        + ' 4-crop parameter shoud not be greater than width and height'
+        + ' 5-first parameter should be >= third'
+        + ' 6-forth parameter should be >= second'
+        )
 
 def resize(request):
     try :
@@ -55,7 +58,10 @@ def resize(request):
         context = {'image' : request.session['Url']}
         return render(request, 'fileuploader/edit.html', context)
     except :
-        return HttpResponse('No photo uploaded')
+        return HttpResponse('chek: 1-image was not uploaded  2-you entered string  3-you entered nothing'
+        + ' 4-width and height size must be greater than zero'
+        + ' 5-number you entered is tooo high!!'
+        )
 
 def rotate(request):
     try :
@@ -65,7 +71,11 @@ def rotate(request):
         context = {'image' : request.session['Url']}
         return render(request, 'fileuploader/edit.html', context)
     except :
-        return HttpResponse('No photo uploaded')
+        return HttpResponse('chek: 1-image was not uploaded  2-you entered string  3-you entered nothing')
+
+
+
+
 
 def remove(request):
     return redirect('/')
