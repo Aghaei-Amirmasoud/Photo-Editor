@@ -11,7 +11,7 @@ urlpatterns = [
     path('upload/editor/resize/', views.resize, name='resize'),
     path('upload/editor/rotate/', views.rotate, name='rotate'),
     path('upload/editor/remove/', views.remove, name='remove'),
-    path('upload/editor/share/', views.share_2, name='share_2'),
+    path('upload/editor/share/', views.share, name='share'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

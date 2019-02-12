@@ -70,7 +70,7 @@ def rotate(request):
 def remove(request):
     return redirect('/')
 
-def share_2(request):
+def share(request):
     img = Image.open(os.path.join(settings.MEDIA_ROOT, request.session['Url']))
     img.save(os.path.join(settings.SHARE_ROOT, request.session['Url']))
     path = os.path.join(settings.SHARE_ROOT)
