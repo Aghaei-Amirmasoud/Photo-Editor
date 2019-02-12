@@ -33,7 +33,7 @@ def gray(request):
         context = {'image' : request.session['Url']}
         return render(request, 'fileuploader/edit.html', context)
     except :
-        return HttpResponse('No photo uploaded or photo removed')
+        return HttpResponse('No photo uploaded')
 
 
 def crop(request):
@@ -44,7 +44,7 @@ def crop(request):
         context = {'image' : request.session['Url']}
         return render(request, 'fileuploader/edit.html', context)
     except :
-        return HttpResponse('No photo uploaded or photo removed')
+        return HttpResponse('No photo uploaded')
 
 
 def resize(request):
@@ -55,7 +55,7 @@ def resize(request):
         context = {'image' : request.session['Url']}
         return render(request, 'fileuploader/edit.html', context)
     except :
-        return HttpResponse('No photo uploaded or photo removed')
+        return HttpResponse('No photo uploaded')
 
 def rotate(request):
     try :
@@ -65,7 +65,7 @@ def rotate(request):
         context = {'image' : request.session['Url']}
         return render(request, 'fileuploader/edit.html', context)
     except :
-        return HttpResponse('No photo uploaded or photo removed')
+        return HttpResponse('No photo uploaded')
 
 def remove(request):
     return redirect('/')
