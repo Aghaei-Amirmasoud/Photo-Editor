@@ -46,6 +46,7 @@ def crop(request):
     except :
         return HttpResponse('chek: 1-image was not uploaded  2-you entered string  3-you entered nothing'
         + ' 4-crop parameters shoud not be greater than width and height'
+        + ' 5-be caraful!! invalid input will crash your image'
         )
 
 def resize(request):
