@@ -17,9 +17,9 @@ def index(request):
 
 def upload(request):
     try :
-        photo_url = default_storage.save('file.jpg', request.FILES['fileToUpload'])
-        context = {'image' : photo_url}
-        request.session['Url'] = photo_url;
+        img_saved = default_storage.save('file.jpg', request.FILES['fileToUpload'])
+        context = {'image' : img_saved}
+        request.session['Url'] = img_saved;
         return render(request, 'fileuploader/edit.html', context)
     except :
         return HttpResponse('No photo chosen')
@@ -45,9 +45,7 @@ def crop(request):
         return render(request, 'fileuploader/edit.html', context)
     except :
         return HttpResponse('chek: 1-image was not uploaded  2-you entered string  3-you entered nothing'
-        + ' 4-crop parameter shoud not be greater than width and height'
-        + ' 5-first parameter should be >= third'
-        + ' 6-forth parameter should be >= second'
+        + ' 4-crop parameters shoud not be greater than width and height'
         )
 
 def resize(request):
